@@ -1,12 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Component.css";
 import mesa from "../asset/mesa.png";
 import carritocompras from "../asset/carritocompras.png";
 import lupa from "../asset/lupa.png";
 import { motion } from "framer-motion";
+import { GetSearch } from "../Requests/Reques";
 
 
-const NavComponents = () => {
+const NavComponents = ({setdata}) => {
+  const[Gettex,Setext] = useState();
+  const Load = async (Containt) =>{
+     const hola = await GetSearch(Containt);
+     setdata(hola.data)
+     console.log(hola.data)
+  }
   return (
     <div className="Container-Nav">
       <div className="OneSetcion-nav"
@@ -44,12 +51,15 @@ const NavComponents = () => {
       </div>
       <div className="Search-nav">
         <motion.input
+        onChange={(e)=>{Setext(e.target.value)}}
+        value = {Gettex}
           type="text"
           initial={{ x: -400 }}
           animate={{ x: 0 }}
           transition={{ delay: 2, duration: 0.5 }}
         />
         <motion.button
+        onClick={()=>{Load(Gettex)}}
           initial={{ x: 100 }}
           animate={{ x: 0 }
         }

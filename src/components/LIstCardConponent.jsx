@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import CardConponent from "./CardConponent";
 import { motion } from "framer-motion";
+import { GetAll } from "../Requests/Reques";
 
-const LIstCardConponent = () => {
-
+const LIstCardConponent = ({getdata}) => {
    const list = [
     "1",
     "11",
@@ -20,14 +20,14 @@ const LIstCardConponent = () => {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 2,
-        staggerChildren: 0.5,
-      },
-    },
-  };
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
 
   const item = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: -120, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -40,11 +40,12 @@ const LIstCardConponent = () => {
       animate="visible"
       className="ListCard"
     >
-      {list.map((data) => (
-        <CardConponent data={data} key={data} item = {item} />
-      ))}
+      {getdata !== null ? (getdata.map((data) => (
+        <CardConponent item = {item} data={data} key={data.id}  />
+      ))):(<>Cargando</>)}
     </motion.div>
   );
+  
 };
 
 export default LIstCardConponent;
