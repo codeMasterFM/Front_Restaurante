@@ -17,6 +17,7 @@ export const Home = () => {
   }
   ,[])
 return (
+  //
    <>
 <div>
    <NavComponents setdata={setdata}/>
