@@ -10,8 +10,6 @@ export const Home = () => {
     const hola = await GetAll()
     setdata(hola.data)
     console.log(hola.data)
-    
-  console.log(getdata)
   }
 
   useEffect(() =>{

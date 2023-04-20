@@ -8,6 +8,8 @@ import { GetSearch } from "../Requests/Reques";
 
 
 const NavComponents = ({setdata}) => {
+  const urlparams = new URLSearchParams(window.location.search)
+  const Nmesa = sessionStorage.getItem("M")
   const[Gettex,Setext] = useState();
   const Load = async (Containt) =>{
      const hola = await GetSearch(Containt);
@@ -33,7 +35,7 @@ const NavComponents = ({setdata}) => {
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
           >
-            Mesa 4 -
+            Mesa {Nmesa} -
           </motion.label>
           <motion.img
             src={mesa}
@@ -46,6 +48,7 @@ const NavComponents = ({setdata}) => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 1 }}
+            onClick={()=> window.location.href ="/sales"}
           />
         </article>
       </div>

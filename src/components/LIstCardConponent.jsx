@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from "react";
 import CardConponent from "./CardConponent";
 import { motion } from "framer-motion";
-import { GetAll } from "../Requests/Reques";
 
 const LIstCardConponent = ({getdata}) => {
    const list = [
@@ -42,7 +41,18 @@ const LIstCardConponent = ({getdata}) => {
     >
       {getdata !== null ? (getdata.map((data) => (
         <CardConponent item = {item} data={data} key={data.id}  />
-      ))):(<>Cargando</>)}
+      ))):(
+      <div className="ContainerLoad">
+    <div class="dot-spinner">
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+    <div class="dot-spinner__dot"></div>
+</div></div>)}
     </motion.div>
   );
   

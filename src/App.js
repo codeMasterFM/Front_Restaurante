@@ -1,6 +1,7 @@
 import React from "react";
 import {BrowserRouter,Route, Routes} from 'react-router-dom'
 import { Home } from "./page/Home";
+import Sales from "./page/Sales";
 
 const App =() =>{
     if (window.innerWidth < 461) {
@@ -8,6 +9,7 @@ const App =() =>{
   <BrowserRouter>
   <Routes>
   <Route path="/" element ={<Home/>}/>
+  <Route path="/Sales" element ={<Sales/>}/>
   </Routes>
   </BrowserRouter>
   )
