@@ -3,7 +3,7 @@ import "./Component.css";
 import mesa from "../asset/mesa.png";
 import carritocompras from "../asset/carritocompras.png";
 import lupa from "../asset/lupa.png";
-import { motion } from "framer-motion";
+import { motion, transform } from "framer-motion";
 import { GetSearch } from "../Requests/Reques";
 
 
@@ -63,15 +63,11 @@ const NavComponents = ({setdata}) => {
         />
         <motion.button
         onClick={()=>{Load(Gettex)}}
-          initial={{ x: 100 }}
-          animate={{ x: 0 }
-        }
-          
+          initial={{ x: 100}}
+          animate={{ x: 0 }}
           whileTap={{
-            scale: 0.8,
-            rotate: -90,
-            borderRadius: "100%",
-            
+          backgroundColor:"#088395",
+          transition: { duration: 0.1 } 
           }}
         >
           <img src={lupa} height={20} width={30} />

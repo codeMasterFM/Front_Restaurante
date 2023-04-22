@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
-const url1 = "https://frita.somee.com/";
-const url2 = "https://localhost:7052/";
+const url2 = "https://frita.somee.com/";
+const url1 = "https://localhost:7052/";
 
 
 const SaveUsuario = async () => {
@@ -17,7 +17,7 @@ if (negocioId != null && Mesa != null) {
 }
 //Obtener todos los productos de una empresa
 export const GetAll = async () => {
-  SaveUsuario();
+  await SaveUsuario();
   console.log()
   const urlParams = new URLSearchParams(window.location.search);
   const negocioId = await sessionStorage.getItem("N")

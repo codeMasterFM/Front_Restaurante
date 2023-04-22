@@ -19,7 +19,7 @@ const fechaActual = fecha.toLocaleString()
 }
   //const [selectedId, setSelectedId] = useState(null);
   return (
-    <motion.div variants={item} className="Container-Card">
+    <motion.div variants={item} className="Container-Card" >
       <img src={`data:image/png;base64,${data.image}`} alt="Imagen" />
       <div className="Describe-Card">
         <label className="Card-Title">{data.name}</label>

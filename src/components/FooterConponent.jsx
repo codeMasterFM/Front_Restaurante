@@ -1,7 +1,7 @@
 import React from "react";
-import bebidas from "../asset/bebidas.png";
-import plato from "../asset/platos.png";
-import postre from "../asset/postres.png";
+import bebidas from "../asset/jugo.png";
+import plato from "../asset/arros.png";
+import postre from "../asset/galleta.png";
 import { motion } from "framer-motion";
 import { GetForCategory } from "../Requests/Reques";
 const FooterConponent = ({ setdata }) => {
