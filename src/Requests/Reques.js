@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import axios from "axios";
 const url2 = "https://frita.somee.com/";
 const url1 = "https://localhost:7052/";
-const url3 = "http://fritasoft-001-site1.etempurl.com/";
+
 
 
 
@@ -12,8 +12,6 @@ const SaveUsuario = async () => {
   const Mesa = urlParams.get("M");
 if (negocioId != null && Mesa != null) {
   await sessionStorage.setItem("M",Mesa)
-
-  
   await sessionStorage.setItem("N",negocioId)
 }
   
