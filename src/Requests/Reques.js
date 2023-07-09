@@ -12,6 +12,8 @@ const SaveUsuario = async () => {
   const Mesa = urlParams.get("M");
 if (negocioId != null && Mesa != null) {
   await sessionStorage.setItem("M",Mesa)
+
+  
   await sessionStorage.setItem("N",negocioId)
 }
   
