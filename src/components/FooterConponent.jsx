@@ -2,6 +2,9 @@ import React from "react";
 import bebidas from "../asset/jugo.png";
 import plato from "../asset/arros.png";
 import postre from "../asset/galleta.png";
+import soda from "../asset/soda.png"
+import Food from '../asset/Food.png'
+import postree from '../asset/Postree.png'
 import { motion } from "framer-motion";
 import { GetForCategory } from "../Requests/Reques";
 const FooterConponent = ({ setdata }) => {
@@ -23,9 +26,10 @@ const FooterConponent = ({ setdata }) => {
           LoadData("bebidas");
         }}
       >
-        <img src={bebidas} />
+        <img src={soda} />
         <label> Bebida</label>
       </motion.div>
+
       <motion.div
         initial={{ opacity: 0 , y:200}}
         animate={{ opacity: 100, y:0 }}
@@ -36,7 +40,7 @@ const FooterConponent = ({ setdata }) => {
           LoadData("platos");
         }}
       >
-        <img src={plato} />
+        <img src={Food} />
         <label>platos</label>
       </motion.div>
       <motion.div
@@ -49,7 +53,7 @@ const FooterConponent = ({ setdata }) => {
           LoadData("postres");
         }}
       >
-        <img src={postre} />
+        <img src={postree} />
         <label>postres</label>
       </motion.div>
     </div>

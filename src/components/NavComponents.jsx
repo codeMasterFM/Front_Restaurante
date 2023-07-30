@@ -1,21 +1,43 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import "./Component.css";
 import mesa from "../asset/mesa.png";
 import carritocompras from "../asset/carritocompras.png";
 import lupa from "../asset/lupa.png";
 import { motion, transform } from "framer-motion";
-import { GetSearch } from "../Requests/Reques";
+import { GetSearch, Negocio } from "../Requests/Reques";
 
 
 const NavComponents = ({setdata}) => {
+
+  const getdataNegocio = async () =>{
+    const negocio = await Negocio();
+    const namefritasoft = negocio.data.topfront;
+    const topcolor = negocio.data.topfront;
+    const bottomcolor  = negocio.data.bottomfront;
+    const datatheme = negocio.data.teme;
+    if (datatheme != 'tema predeterminado') {
+      document.querySelector('.Container-Nav').style.background = topcolor
+    document.querySelector('.Container-Footer').style.background = bottomcolor
+    }
+    
+    console.log(negocio.data)
+    console.log(datatheme)
+    
+  }
+
   const urlparams = new URLSearchParams(window.location.search)
   const Nmesa = sessionStorage.getItem("M")
   const[Gettex,Setext] = useState();
   const Load = async (Containt) =>{
      const hola = await GetSearch(Containt);
      setdata(hola.data)
-     console.log(hola.data)
+    // console.log(hola.data)
+     useEffect(()=>{
+   
+      
+     },[])
   }
+  getdataNegocio()
   return (
     <div className="Container-Nav">
       <div className="OneSetcion-nav"

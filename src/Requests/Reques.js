@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import axios from "axios";
-const url2 = "https://frita.somee.com/";
-const url1 = "https://localhost:7052/";
+const url1 = "https://frita.somee.com/";
+const url2 = "https://localhost:7052/";
 
 
 
@@ -57,4 +57,11 @@ const urlParams = new URLSearchParams(window.location.search);
   const negocioId = await sessionStorage.getItem("N")
   const Mesa = await sessionStorage.getItem("M")
   return await axios.get(`${url2}ventas/${Mesa}/${negocioId}`);
+}
+
+export const Negocio = async () =>{
+  const urlParams = new URLSearchParams(window.location.search);
+  const negocioId = await sessionStorage.getItem("N")
+  const Mesa = await sessionStorage.getItem("M")
+  return await axios.get(`${url2}Negocios/${negocioId}`);
 }

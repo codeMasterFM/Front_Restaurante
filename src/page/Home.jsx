@@ -11,6 +11,7 @@ export const Home = () => {
     setdata(hola.data)
     console.log(hola.data)
   }
+  
 
   useEffect(() =>{
     LoadData();
