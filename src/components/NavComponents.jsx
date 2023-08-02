@@ -8,16 +8,17 @@ import { GetSearch, Negocio } from "../Requests/Reques";
 
 
 const NavComponents = ({setdata}) => {
-
+const [Getname , Setname] =useState(null)
   const getdataNegocio = async () =>{
     const negocio = await Negocio();
     const namefritasoft = negocio.data.topfront;
     const topcolor = negocio.data.topfront;
     const bottomcolor  = negocio.data.bottomfront;
-    const datatheme = negocio.data.teme;
+    const datatheme = negocio.data.teme
+    Setname(negocio.data.name)
     if (datatheme != 'tema predeterminado') {
       document.querySelector('.Container-Nav').style.background = topcolor
-    document.querySelector('.Container-Footer').style.background = bottomcolor
+      document.querySelector('.Container-Footer').style.background = bottomcolor
     }
     
     console.log(negocio.data)
@@ -49,7 +50,7 @@ const NavComponents = ({setdata}) => {
           transition={{ duration:0.5 }}
           onClick={() => (window.location.href = "/")}
         >
-          Frita
+          {Getname}
         </motion.label>
         <article>
           <motion.label
