@@ -1,7 +1,8 @@
 import React,{useState} from "react";
 import axios from "axios";
-const url2 = "https://frita.somee.com/";
-const url1 = "https://localhost:7052/";
+const url1 = "https://frita.somee.com/";
+const url3 = "https://localhost:7052/";
+const url2 = "http://Fritasoft.somee.com/";
 
 
 
