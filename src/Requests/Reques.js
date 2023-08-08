@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import axios from "axios";
 const url1 = "https://frita.somee.com/";
 const url3 = "https://localhost:7052/";
-const url2 = "http://Fritasoft.somee.com/";
+const url2 = "https://Fritasoft.somee.com/";
 
 
 
@@ -25,7 +25,12 @@ export const GetAll = async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const negocioId = await sessionStorage.getItem("N")
   const Mesa = urlParams.get("M");
-  return await axios.get(`${url2}Productos/business/${negocioId}`);
+  try {
+    return await axios.get(`${url2}Productos/business/${negocioId}`);
+  } catch (error) {
+    console.log(error)
+  }
+
 };
 //Obtener los productos por su categoria
 export const GetForCategory = async ({ categoria }) =>
